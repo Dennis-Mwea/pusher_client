@@ -1,6 +1,6 @@
 PODS:
   - Flutter (1.0.0)
-  - pusher_client (1.0.0):
+  - pusher_client (2.0.0):
     - Flutter
     - PusherSwiftWithEncryption (~> 8.0.0)
   - PusherSwiftWithEncryption (8.0.0):
@@ -29,13 +29,13 @@ EXTERNAL SOURCES:
     :path: ".symlinks/plugins/pusher_client/ios"
 
 SPEC CHECKSUMS:
-  Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  pusher_client: 98d16b50f0ebb4d67d3f61b29723142c03179da9
-  PusherSwiftWithEncryption: 8ed9c9cf743b0530aa3a8c60de6734475f1aa67d
+  Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
+  pusher_client: ffcefc0aeeb910ef85e82c9bb333146adad0d8ce
+  PusherSwiftWithEncryption: e8626abf1067a7e1b06afde720934fe1872498e3
   ReachabilitySwift: 985039c6f7b23a1da463388634119492ff86c825
   Sodium: 63c0ca312a932e6da481689537d4b35568841bdc
   Starscream: 4bb2f9942274833f7b4d296a55504dcfc7edb7b0
 
-PODFILE CHECKSUM: a75497545d4391e2d394c3668e20cfb1c2bbd4aa
+PODFILE CHECKSUM: 7368163408c647b7eb699d0d788ba6718e18fb8d
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.11.3
