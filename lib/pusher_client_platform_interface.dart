@@ -1,6 +1,5 @@
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
-
-import 'pusher_client_method_channel.dart';
+import 'package:pusher_client/pusher_client_method_channel.dart';
 
 abstract class PusherClientPlatform extends PlatformInterface {
   /// Constructs a PusherClientPlatform.
