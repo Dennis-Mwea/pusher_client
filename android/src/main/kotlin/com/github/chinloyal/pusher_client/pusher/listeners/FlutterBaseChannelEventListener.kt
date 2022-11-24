@@ -5,8 +5,6 @@ import android.os.Looper
 import com.github.chinloyal.pusher_client.core.utils.Constants
 import com.github.chinloyal.pusher_client.pusher.PusherService.Companion.debugLog
 import com.github.chinloyal.pusher_client.pusher.PusherService.Companion.eventSink
-import com.google.gson.Gson
-import com.google.gson.JsonObject
 import com.pusher.client.channel.ChannelEventListener
 import com.pusher.client.channel.PusherEvent
 import org.json.JSONObject
@@ -45,15 +43,11 @@ open class FlutterBaseChannelEventListener : ChannelEventListener {
     override fun onSubscriptionSucceeded(channelName: String) {
         this.onEvent(
             PusherEvent(
-                Gson().fromJson(
-                    Gson().toJson(
-                        mapOf(
-                            "event" to Constants.SUBSCRIPTION_SUCCEEDED.value,
-                            "channel" to channelName,
-                            "user_id" to null,
-                            "data" to null
-                        )
-                    ), JsonObject::class.java
+                mapOf(
+                    "event" to Constants.SUBSCRIPTION_SUCCEEDED.value,
+                    "channel" to channelName,
+                    "user_id" to null,
+                    "data" to null
                 )
             )
         )

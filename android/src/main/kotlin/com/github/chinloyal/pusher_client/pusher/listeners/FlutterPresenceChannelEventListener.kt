@@ -2,8 +2,6 @@ package com.github.chinloyal.pusher_client.pusher.listeners
 
 import com.github.chinloyal.pusher_client.core.utils.Constants
 import com.github.chinloyal.pusher_client.pusher.PusherService
-import com.google.gson.Gson
-import com.google.gson.JsonObject
 import com.pusher.client.channel.PresenceChannelEventListener
 import com.pusher.client.channel.PusherEvent
 import com.pusher.client.channel.User
@@ -17,15 +15,11 @@ class FlutterPresenceChannelEventListener : FlutterBaseChannelEventListener(),
     override fun onUsersInformationReceived(channelName: String, users: MutableSet<User>) {
         this.onEvent(
             PusherEvent(
-                Gson().fromJson(
-                    Gson().toJson(
-                        mapOf(
-                            "event" to Constants.SUBSCRIPTION_SUCCEEDED.value,
-                            "channel" to channelName,
-                            "user_id" to null,
-                            "data" to users.toString()
-                        )
-                    ), JsonObject::class.java
+                mapOf(
+                    "event" to Constants.SUBSCRIPTION_SUCCEEDED.value,
+                    "channel" to channelName,
+                    "user_id" to null,
+                    "data" to users.toString()
                 )
             )
         )
@@ -34,15 +28,11 @@ class FlutterPresenceChannelEventListener : FlutterBaseChannelEventListener(),
     override fun userUnsubscribed(channelName: String, user: User) {
         this.onEvent(
             PusherEvent(
-                Gson().fromJson(
-                    Gson().toJson(
-                        mapOf(
-                            "event" to Constants.MEMBER_REMOVED.value,
-                            "channel" to channelName,
-                            "user_id" to user.id,
-                            "data" to null
-                        )
-                    ), JsonObject::class.java
+                mapOf(
+                    "event" to Constants.MEMBER_REMOVED.value,
+                    "channel" to channelName,
+                    "user_id" to user.id,
+                    "data" to null
                 )
             )
         )
@@ -51,15 +41,11 @@ class FlutterPresenceChannelEventListener : FlutterBaseChannelEventListener(),
     override fun userSubscribed(channelName: String, user: User) {
         this.onEvent(
             PusherEvent(
-                Gson().fromJson(
-                    Gson().toJson(
-                        mapOf(
-                            "event" to Constants.MEMBER_ADDED.value,
-                            "channel" to channelName,
-                            "user_id" to user.id,
-                            "data" to null
-                        )
-                    ), JsonObject::class.java
+                mapOf(
+                    "event" to Constants.MEMBER_ADDED.value,
+                    "channel" to channelName,
+                    "user_id" to user.id,
+                    "data" to null
                 )
             )
         )
@@ -75,15 +61,11 @@ class FlutterPresenceChannelEventListener : FlutterBaseChannelEventListener(),
 
         this.onEvent(
             PusherEvent(
-                Gson().fromJson(
-                    Gson().toJson(
-                        mapOf(
-                            "event" to Constants.SUBSCRIPTION_SUCCEEDED.value,
-                            "channel" to channelName,
-                            "user_id" to null,
-                            "data" to null
-                        )
-                    ), JsonObject::class.java
+                mapOf(
+                    "event" to Constants.SUBSCRIPTION_SUCCEEDED.value,
+                    "channel" to channelName,
+                    "user_id" to null,
+                    "data" to null
                 )
             )
         )
