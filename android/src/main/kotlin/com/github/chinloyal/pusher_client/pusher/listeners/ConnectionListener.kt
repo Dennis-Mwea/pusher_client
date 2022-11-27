@@ -12,7 +12,7 @@ import org.json.JSONObject
 import java.lang.Exception
 
 class ConnectionListener: ConnectionEventListener {
-    val eventStreamJson = JSONObject();
+    private val eventStreamJson = JSONObject();
 
     override fun onConnectionStateChange(change: ConnectionStateChange) {
         Handler(Looper.getMainLooper()).post {
@@ -22,7 +22,7 @@ class ConnectionListener: ConnectionEventListener {
                         "previousState" to change.previousState.toString()
                 ))
 
-                debugLog("[${change.currentState.toString()}]")
+                debugLog("[${change.currentState}]")
 
                 eventStreamJson.put("connectionStateChange", connectionStateChange)
 
@@ -51,7 +51,7 @@ class ConnectionListener: ConnectionEventListener {
                 PusherService.eventSink?.success(eventStreamJson.toString())
             } catch (e: Exception) {
                 e.message?.let { errorLog(it) }
-                if (PusherService.enableLogging) {
+                if (enableLogging) {
                     e.printStackTrace()
                 }
             }
