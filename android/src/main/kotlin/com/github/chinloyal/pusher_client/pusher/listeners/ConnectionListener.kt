@@ -12,7 +12,7 @@ import org.json.JSONObject
 import java.lang.Exception
 
 class ConnectionListener: ConnectionEventListener {
-    private val eventStreamJson = JSONObject();
+    private val eventStreamJson = JSONObject()
 
     override fun onConnectionStateChange(change: ConnectionStateChange) {
         Handler(Looper.getMainLooper()).post {
